@@ -3725,16 +3725,23 @@ hr {
       margin: 0 auto; } }
 
 .site-header__logo-image {
-  display: block; }
-  @media only screen and (min-width: 750px) {
-    .site-header__logo-image {
-      margin: 0 auto; } }
+  display: block;
+  animation: none;
+  background: none;
+}
+@media only screen and (min-width: 750px) {
+  .site-header__logo-image {
+    margin: 0 auto;
+  }
+}
 
 .site-header__logo-image img {
-  width: 100%; }
-
+  width: 100%;
+}
+  
 .site-header__logo-image--centered img {
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .site-header__logo img {
   display: block; }
