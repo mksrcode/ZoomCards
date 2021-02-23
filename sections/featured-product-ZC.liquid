@@ -163,8 +163,12 @@
         </div>
 
         <div>
-          <div class="featured-product__price">
-            {% include 'product-price', variant: current_variant, product: product, show_vendor: section.settings.show_vendor %}
+          <div class="featured-product__price" style="text-align: center;">
+            <h4 style="margin: 5px 0px 0px; font-size: 20px;">ORDER TODAY</h4>
+            <p style="margin: 5px 0px 0px;">One set <span style="color: #ec008d; text-decoration: line-through; text-decoration-thickness: 2px;"><span style="color: #333232;">$12.99</span></span> - now $9.99</p>
+            <p style="margin: 5px 0px 0px;">Three sets <span style="color: #ec008d; text-decoration: line-through; text-decoration-thickness: 2px;"><span style="color: #333232;">$29.99</span></span> - now $24.99</p>
+            <h4 style="margin: 10px 0px; font-size: 18px;">*FREE SHIPPING</h4>
+            {% comment %} {% include 'product-price', variant: current_variant, product: product, show_vendor: section.settings.show_vendor %} {% endcomment %}
           </div>
 
           {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
@@ -198,6 +202,7 @@
               {% unless section_onboarding %}
                 {% unless product.has_only_default_variant %}
                   <div class="product-form__controls-group">
+                    
                     {% for option in product.options_with_values %}
                       <div class="selector-wrapper js product-form__item">
                         <label for="SingleOptionSelector-{{ section.id }}-{{ forloop.index0 }}">
@@ -289,10 +294,11 @@
           role="alert"
           aria-hidden="true"
         >{{ 'products.product.loader_label' | t }}</p>
-
         {% if section.settings.show_share_buttons %}
           {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
         {% endif %}
+        <p>For large volume orders (over 25 sets) or custom branded cards email hello@getzoomcards.com</p>
+        <p style="font-size: 12px;">*Free shipping excludes anywhere outside of Canada.</p>
       </div>
     </div>
   </div>
